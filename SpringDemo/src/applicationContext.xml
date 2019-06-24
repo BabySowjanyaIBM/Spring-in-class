@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean name="myFortuneService" class="testPKG.HappyFortuneClass"></bean>
+	<!--  using constructor method -->
+	<!-- 
+
+	<bean name="MyBaseballCoach" class="testPKG.BaseballCoach">
+		<constructor-arg name="fs1" ref="myFortuneService"></constructor-arg>
+	</bean>
+	
+	 -->
+	 
+	 <!-- using setter method -->
+	 <bean name="MyBaseballCoach" class="testPKG.BaseballCoach" >
+	 	<property name="fs" ref="myFortuneService"></property>
+	 	<property name="email" value="ourteam@gmail.com"></property>
+	 	<property name="team" value="Sunrisers hderabad"></property>
+	 </bean> 
+	<bean name="MyTrackCoach" class="testPKG.TrackCoach"></bean>
+</beans>
